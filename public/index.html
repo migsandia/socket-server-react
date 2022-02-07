@@ -8,7 +8,10 @@
     <title>MiniChat</title>
 </head>
 <body class="container">
-    <h1 class="mt-5">MiniChat</h1>
+
+    <h1 class="mt-5">Acceso denegado</h1>
+    <hr>
+    <!-- <h1 class="mt-5">MiniChat</h1>
     <hr>
 
     <form id="miFormulario">
@@ -33,7 +36,7 @@
             </ul>
             
         </div>
-    </div>
+    </div> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -41,28 +44,25 @@
     <script>
         const socket = io('https://react-socket-server-msd.herokuapp.com/');
 
-        // Rreferencias elementos del DOM
-        const formulario = document.querySelector('#miFormulario');
-        const mensajes = document.querySelector('#misMensajes');
-        const txtMensaje = document.querySelector('#txtMensaje');
+        // // Rreferencias elementos del DOM
+        // const formulario = document.querySelector('#miFormulario');
+        // const mensajes = document.querySelector('#misMensajes');
+        // const txtMensaje = document.querySelector('#txtMensaje');
 
-        formulario.addEventListener( 'submit', (ev) => {
+        // formulario.addEventListener( 'submit', (ev) => {
 
-            ev.preventDefault();
+        //     ev.preventDefault();
 
-            const nuevoMensaje = txtMensaje.value;
+        //     const nuevoMensaje = txtMensaje.value;
 
-            socket.emit('mensaje-to-server', { texto: nuevoMensaje })
+        //     socket.emit('mensaje-to-server', { texto: nuevoMensaje })
 
-        } );
+        // } );
 
-        socket.on('mensaje-from-server', (data) => {
+        // socket.on('mensaje-from-server', (data) => {
             
-            mensajes.innerHTML += `<li>${data.texto}</li>`;
+        //     mensajes.innerHTML += `<li>${data.texto}</li>`;
 
-        });
-        // socket.on('mensaje-bienvenida', ( data ) => {
-        //     console.log( data );
         // });
 
         // setTimeout( () => {
@@ -71,6 +71,12 @@
         //         nombre: 'Miguel'
         //     });
         // }, 2000);
+
+        socket.on('mensaje-from-server', ( data ) => {
+            
+        });
+
+
 
     </script>
 </body>
